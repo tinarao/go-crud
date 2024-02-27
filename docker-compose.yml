@@ -23,7 +23,7 @@ services:
   frontend:
     build: client/.
     ports: 
-      - "5173:80"
+      - "4000:80"
 
 volumes:
   postgres-db:
