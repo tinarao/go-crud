@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/tinarao/go-crud/models"
-	"gorm.io/drivers/postgres"
+	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 )
@@ -36,7 +36,7 @@ func ConnectDB() {
 	db.Logger = logger.Default.LogMode(logger.Info)
 
 	log.Println("Running automigrations")
-	db.AutoMigrate(&models.Fact)
+	db.AutoMigrate(&models.Fact{})
 
 	DB = Dbinstance{
 		Db: db,

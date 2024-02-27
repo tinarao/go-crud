@@ -11,9 +11,5 @@ func main() {
 
 	setupRoutes(app)
 
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("yffj")
-	})
-
 	app.Listen(":3000")
 }
