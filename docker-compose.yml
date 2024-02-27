@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    build: .
+    build: server/.
     env_file:
       - .env
     ports:
@@ -20,6 +20,10 @@ services:
       - "5432:5432"
     volumes:
       - postgres-db:/var/lib/postgresql/data
+  frontend:
+    build: client/.
+    ports: 
+      - "5173:80"
 
 volumes:
   postgres-db:
