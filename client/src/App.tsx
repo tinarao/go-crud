@@ -1,24 +1,40 @@
+import { Toaster } from "react-hot-toast"
 import Facts from "./components/Facts"
+import axios from "axios"
+import { useState } from "react"
+import AddFactForm from "./components/AddFactForm"
 
 function App() {
 
   return (
     <>
-    <header className="py-4 border-b-2">
-    <h1 className="text-8xl font-bold text-blue-700 text-center">
+      <Toaster />
+      <header className="py-4 border-b-2">
+        <h1 className="text-8xl font-bold text-blue-700 text-center">
           Факты
         </h1>
-    </header>
-      <main className="py-8 container mx-auto h-screen">
-        <Facts />
+      </header>
+      <main className="py-4 mx-auto h-screen">
+        <div className="flex items-center justify-between w-[50%] mx-auto">
+          <div>
+            <h3>Добавить факт</h3>
+          </div>
+          <div>
+            <AddFactForm />
+          </div>
+        </div>
+        <div className="py-4">
+          <hr />
+        </div>
+        <div className="container mx-auto">
+          <Facts />
+        </div>
       </main>
-      <footer className="bg-black py-16 sticky bottom-0">
-        <div className="flex gap-8 w-fit mx-auto">
-          <img src="https://skillicons.dev/icons?i=go" />
-          <img src="https://skillicons.dev/icons?i=ts" />
-          <img src="https://skillicons.dev/icons?i=postgres" />
-          <img src="https://skillicons.dev/icons?i=docker" />
-          <img src="https://skillicons.dev/icons?i=tailwind" />
+      <footer className="sticky bg-black bottom-0 border-t py-4">
+        <div className="w-fit mx-auto">
+          <a href="https://github.com/tinarao/go-crud" target="_blank">
+            <img src="https://skillicons.dev/icons?i=github" />
+          </a>
         </div>
       </footer>
     </>
