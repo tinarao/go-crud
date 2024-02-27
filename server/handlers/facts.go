@@ -6,6 +6,10 @@ import (
 	"github.com/tinarao/go-crud/models"
 )
 
+type DeleteId struct {
+	ID int
+}
+
 func Home(c *fiber.Ctx) error {
 	data := []models.Fact{}
 	db.DB.Db.Find(&data)
@@ -21,5 +25,13 @@ func CreateFact(c *fiber.Ctx) error {
 	}
 
 	db.DB.Db.Create(&fact)
-	return c.Status(200).JSON(fact)
+	return c.Status(201).JSON(fact)
+}
+
+func DeleteFact(c *fiber.Ctx) error {
+	id := c.QueryInt("id")
+	db.DB.Db.Delete(&models.Fact{}, id)
+	return c.Status(200).JSON(fiber.Map{
+		"message": "Удалено!",
+	})
 }

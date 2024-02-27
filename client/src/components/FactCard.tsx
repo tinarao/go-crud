@@ -5,6 +5,11 @@ type FCProps = {
 }
 
 const FactCard = ({ fact }: FCProps) => {
+
+    const deleteFact = async () => {
+      await axios.delete()
+    }
+
   return (
     <div className="border py-4 px-4 rounded-lg">
         <h3 className="text-2xl">Вопрос: {fact.question}</h3>

@@ -9,13 +9,15 @@ const Facts = () => {
     const [data, setData] = useState<Array<Fact>>([]);
 
     const getFacts = async () => {
-        const res = await axios.get("http://localhost:3000/");
+        const res = await axios.get("http://localhost:3000/get");
         setData(res.data)
     }
 
+    console.log(data)
+
     useEffect(() => {
         getFacts();
-    }, [data])
+    }, [data.length])
 
     return (
         <div className='grid grid-cols-4 gap-4'>
