@@ -13,8 +13,6 @@ const Facts = () => {
         setData(res.data)
     }
 
-    console.log(data)
-
     useEffect(() => {
         getFacts();
     }, [data.length])

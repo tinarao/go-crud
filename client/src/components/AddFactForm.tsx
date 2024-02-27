@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import toast from 'react-hot-toast'
 
 const AddFactForm = () => {
@@ -9,14 +9,14 @@ const AddFactForm = () => {
         answer: undefined,
     })
 
-    const changeForm = (e) => {
+    const changeForm = (e: React.ChangeEvent<HTMLInputElement>) => {
         setForm(prev => ({
             ...prev,
             [e.target.name]: [e.target.value].join()
         }))
     }
 
-    const addFact = async (e) => {
+    const addFact = async (e: React.SyntheticEvent) => {
         e.preventDefault();
         if (form.question === undefined || form.answer === undefined) {
             toast.error("Поля не могут быть пустыми!")

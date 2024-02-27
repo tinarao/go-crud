@@ -6,3 +6,8 @@
 </p>
 
 ### Простой круд для ознакомления с Go и Docker
+
+```
+docker compose build
+docker compose up
+```

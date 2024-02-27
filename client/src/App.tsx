@@ -1,7 +1,5 @@
 import { Toaster } from "react-hot-toast"
 import Facts from "./components/Facts"
-import axios from "axios"
-import { useState } from "react"
 import AddFactForm from "./components/AddFactForm"
 
 function App() {
